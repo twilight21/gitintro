@@ -293,7 +293,7 @@ You should see
 ```
 Hello
 ```
-instead of "Bonjour," meaning git has restored the repository to its state when you made the first commit.
+instead of "Bonjour", meaning git has restored the repository to its version when you made the first commit.
 
 To return to the most recent version of the repository, type
 ```
