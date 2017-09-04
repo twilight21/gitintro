@@ -168,21 +168,12 @@ nothing to commit, working tree clean
 ```
 Now git is saying there are no new changes. Our working tree is clean again, since we just committed all our previous changes.
 
-### Workflow summary
-To summarize the above steps, your basic git workflow is
-```
-(...work until you are happy...)
-git add -A
-git commit -m "describe your changes here"
-(...continue working until you are happy again, and repeat...)
-```
-
 ### Publishing your work
 If your git repository is set up to publish your work to github, it's easy to publish (called `push` in git) your commits.
 
 First, create a new github repository through the github website. Then, github should show you some commands to "push an existing repository from the command line" that look like
 ```
-git remote add origin git@github.com:(YourGithubAccountName)/(RepositoryName).git
+git remote add origin git@github.com:YourGithubAccountName/RepositoryName.git
 git push -u origin master
 ```
 Of course, your account and repository names will be different. If you type these commands, you will be prompted for your github password, and then your changes will be published.
@@ -198,3 +189,22 @@ If other people are publishing commits to your github repository, you can downlo
 ```
 git pull
 ```
+<!---
+TODO dealing with conflicts and merges...
+-->
+
+### Workflow summary
+To summarize the above steps, your basic git workflow is
+```
+git pull
+(...work until you are happy...)
+git diff
+(...review your changes, press q when done...)
+git add -A
+git commit -m "describe your changes here"
+git push -u origin master
+(...continue working until you are happy again, and repeat...)
+```
+
+
+
