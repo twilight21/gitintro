@@ -251,7 +251,7 @@ Date:   Mon Sep 4 10:49:50 2017 -0400
     french version
 
 commit a0aa9366c4478a7abdf6dfe7fc6780d9325aee63
-Author: Jonathan Schroeder <jd.schroeder@gmaila0aa9366c4478a7abdf6dfe7fc6780d9325aee63.com>
+Author: Jonathan Schroeder <jd.schroeder@gmail.com>
 Date:   Mon Sep 4 10:35:47 2017 -0400
 
     added my first file to git
