@@ -238,6 +238,8 @@ If you don't have (or don't want) commits from other team members, leave out the
 ## Reviewing repository history and recalling old versions of files
 The advantage of using git is that you can review your commit history, and return to any previous commit you made.
 
+Before starting, make sure your working tree is clean by typing `git status`. It's always best to start with a clean working tree before recalling older commits, as git will refuse to overwrite any uncommitted changes you have made. If your working tree is not clean, use `git add` and `git commit` to commit your changes before continuing.
+
 To see a log of all your past commits, type the command
 ```
 git log
@@ -311,3 +313,16 @@ This time, you should see
 Bonjour
 ```
 meaning git has restored the most recent version of `test.txt`.
+
+### checkout summary
+Summarizing how to use `git checkout`:
+```
+git status
+(...make sure working tree is clean, use git add and commit if needed...)
+git log
+(...choose which commit you want to return to, press q...)
+git checkout [commit-id]
+(...look at the older version of your repository...)
+git checkout master
+(...back to the latest version...)
+```
