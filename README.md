@@ -126,7 +126,7 @@ fatal: empty ident name (for <(null)>) not allowed
 ```
 This error means git doesn't know your name and email address, so it can't fill out the commit's author fields. To tell git who you are, type these two commands with your information filled in.
 
-**Be careful!** If you publish to github, the email and name you provide here will be published along with your commits. Use information you don't mind being made publish.
+**Be careful!** If you publish to github, the email and name you provide here will be published along with your commits. Use information you don't mind being made public.
 ```
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
@@ -136,7 +136,7 @@ Now type your commit command again, or use the up arrow on your keyboard to find
 ```
 git commit -m "added my first file to git"
 ```
-Each commit must have a message attached to it, that's the part after `-m` and in quotes. This is to let others know what the important changes have been made in your files. If you want to write longer commit messages, you can just type `git commit` and git will open a text editor for you to type your message. When you're done, save and close your editor, and git will make your commit.
+Each commit must have a message attached to it, that's the part after `-m` and in quotes. This is to let others know what important changes have been made in your files. If you want to write longer commit messages, you can just type `git commit` and git will open a text editor for you to type your message. When you're done, save and close your editor, and git will make your commit.
 
 Let's try `git status` again. You should see
 ```
@@ -185,9 +185,9 @@ Since we are happy with our changes, let's `add` and `commit` them.
 git add -A
 git commit -m "added french version"
 ```
-This time, we are using `git add -A` to tell git to add all changes in our repository. This can be useful if you change multiple files, and want to add them all at once.
+This time, we are using `git add -A` to tell git to add all changes in our repository. This can be useful if you change multiple files and want to add them all at once.
 
-**Be careful!** `git add -A` will add every file in your repository, including any temporary or private files you may not wish to publish. If you only want to commit specific files, use `git add [filename1] [filename2] ...` to tell git exactly which files to add.
+**Be careful!** `git add -A` will add every file in your repository, including any temporary or private files you may not wish to publish. If you only want to commit specific files, use `git add filename1 filename2 ...` to tell git exactly which files to add.
 
 If you try `git status` again, you should see:
 ```
