@@ -110,6 +110,32 @@ Make a commit by typing the command:
 ```
 git commit -m "added my first file to git"
 ```
+If this is your very first time using git, you will see an error:
+```
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <(null)>) not allowed
+```
+This error means git doesn't know your name and email address, so it can't fill out the commit's author fields. To tell git who you are, type these two commands with your information filled in.
+
+**Be careful!** If you publish to github, the email and name you provide here will be published along with your commits. Use information you don't mind being made publish.
+```
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+```
+Now type your commit command again, or use the up arrow on your keyboard to find it in your command history.
+
+```
+git commit -m "added my first file to git"
+```
 Each commit must have a message attached to it, that's the part after `-m` and in quotes. This is to let others know what the important changes have been made in your files. If you want to write longer commit messages, you can just type `git commit` and git will open a text editor for you to type your message. When you're done, save and close your editor, and git will make your commit.
 
 Let's try `git status` again. You should see
@@ -161,6 +187,8 @@ git commit -m "added french version"
 ```
 This time, we are using `git add -A` to tell git to add all changes in our repository. This can be useful if you change multiple files, and want to add them all at once.
 
+**Be careful!** `git add -A` will add every file in your repository, including any temporary or private files you may not wish to publish. If you only want to commit specific files, use `git add [filename1] [filename2] ...` to tell git exactly which files to add.
+
 If you try `git status` again, you should see:
 ```
 On branch master
@@ -168,7 +196,7 @@ nothing to commit, working tree clean
 ```
 Now git is saying there are no new changes. Our working tree is clean again, since we just committed all our previous changes.
 
-### Publishing your work
+### (Optional) Publishing your work
 If your git repository is set up to publish your work to github, it's easy to publish (called `push` in git) your commits.
 
 First, create a new github repository through the github website. Then, github should show you some commands to "push an existing repository from the command line" that look like
@@ -184,7 +212,7 @@ git push -u origin master
 ```
 and your changes will be published.
 
-### Working on a team
+### (Optional) Working on a team
 If other people are publishing commits to your github repository, you can download their commits by typing
 ```
 git pull
@@ -196,15 +224,90 @@ TODO dealing with conflicts and merges...
 ### Workflow summary
 To summarize the above steps, your basic git workflow is
 ```
-git pull
+git pull # Optional
 (...work until you are happy...)
 git diff
 (...review your changes, press q when done...)
 git add -A
 git commit -m "describe your changes here"
-git push -u origin master
+git push -u origin master # Optional
 (...continue working until you are happy again, and repeat...)
 ```
+If you don't have (or don't want) commits from other team members, leave out the `git pull` command. If you don't want to publish your work, leave out the `git push` command.
 
+## Reviewing repository history and recalling old versions of files
+The advantage of using git is that you can review your commit history, and return to any previous commit you made.
 
+To see a log of all your past commits, type the command
+```
+git log
+```
+You should see
+```
+commit 0a0bebf35cbbb23ad281dae62747d4eaf714d52f
+Author: Jonathan Schroeder <jd.schroeder@gmail.com>
+Date:   Mon Sep 4 10:49:50 2017 -0400
 
+    french version
+
+commit a0aa9366c4478a7abdf6dfe7fc6780d9325aee63
+Author: Jonathan Schroeder <jd.schroeder@gmaila0aa9366c4478a7abdf6dfe7fc6780d9325aee63.com>
+Date:   Mon Sep 4 10:35:47 2017 -0400
+
+    added my first file to git
+```
+Here git is showing the two commits you made while following this guide, along with the time they were made and the commit messages you provided.
+
+When you are done reviewing the log, press `q` to return to the command line.
+
+The long string of letters and numbers after `commit` is the **commit-id**. We can use the **commit-id** to return the repository to a previous commit.
+
+**Be careful!** Your commit-id may be different than mine, so substitute yours into the following commands. 
+
+To return to the first commit, use `git checkout [commit-id]`
+```
+git checkout a0aa9366c4478a7abdf6dfe7fc6780d9325aee63
+```
+You should see
+```
+Note: checking out 'a0aa9366c4478a7abdf6dfe7fc6780d9325aee63'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at a0aa936... added my first file to git
+```
+Now display the contents of test.txt by typing the command
+```
+cat test.txt
+```
+You should see
+```
+Hello
+```
+instead of "Bonjour," meaning git has restored the repository to its state when you made the first commit.
+
+To return to the most recent version of the repository, type
+```
+git checkout master
+```
+You should see
+```
+Previous HEAD position was a0aa936... added my first file to git
+Switched to branch 'master'
+```
+Again, display the contents of test.txt
+```
+cat test.txt
+```
+This time, you should see
+```
+Bonjour
+```
+meaning git has restored the most recent version of `test.txt`.
