@@ -260,7 +260,7 @@ Here git is showing the two commits you made while following this guide, along w
 
 When you are done reviewing the log, press `q` to return to the command line.
 
-The long string of letters and numbers after `commit` is the **commit-id**. We can use the **commit-id** to return the repository to a previous commit.
+The long string of letters and numbers after `commit` is the **commit-id**. We can use the **commit-id** to return the repository to a previous commit. The commit-id of my first commit is `a0aa9366c4478a7abdf6dfe7fc6780d9325aee63`. 
 
 **Be careful!** Your commit-id may be different than mine, so substitute yours into the following commands. 
 
