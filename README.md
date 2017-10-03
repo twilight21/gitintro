@@ -329,6 +329,9 @@ git checkout master
 
 ## Other topics
 
+### Ignoring files
+If your working tree contains files you do not want git to track, you can create a `.gitignore` file in your repository. Filenames listed in `.gitignore` will not show up in `git status` or be automatically added by `git add -A`.
+
 ### Removing files
 
 To remove a file from your git repository, you can simply delete the file as you normally would, and then run `git add file_to_delete` to add the change to your next commit, or you can run
