@@ -1,5 +1,26 @@
 # Yet another git introduction
 
+<!-- toc -->
+
+- [What is git?](#what-is-git)
+- [Checking if git is installed](#checking-if-git-is-installed)
+- [Making a git repository](#making-a-git-repository)
+- [Basic git workflow](#basic-git-workflow)
+  * [Adding files to the git repository](#adding-files-to-the-git-repository)
+  * [Making a commit](#making-a-commit)
+  * [Making some changes](#making-some-changes)
+  * [(Optional) Publishing your work](#optional-publishing-your-work)
+  * [(Optional) Working on a team](#optional-working-on-a-team)
+  * [Workflow summary](#workflow-summary)
+- [Reviewing repository history and recalling old versions of files](#reviewing-repository-history-and-recalling-old-versions-of-files)
+  * [checkout summary](#checkout-summary)
+- [Other topics](#other-topics)
+  * [Ignoring files](#ignoring-files)
+  * [Removing files](#removing-files)
+  * [Moving or renaming files](#moving-or-renaming-files)
+
+<!-- tocstop -->
+
 ## What is git?
 
 git lets you keep track of different versions of files in a git **repository**. You can also optionally publish your files to an online service like github.
