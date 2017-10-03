@@ -329,6 +329,20 @@ git checkout master
 
 ## Other topics
 
+### Removing files
+
+To remove a file from your git repository, you can simply delete the file as you normally would, and then run `git add file_to_delete` to add the change to your next commit, or you can run
+```
+git rm file_to_delete
+```
+to both remove the file and add the change to your next commit in one action.
+
+If you want git to stop tracking a file, but keep it on your disk, use the command
+```
+git rm --cached file_to_stop_tracking
+```
+Note that you probably also want to add `file_to_stop_tracking` to your `.gitignore` file to prevent git from adding it again in the future.
+
 ### Moving or renaming files
 
 If you move or rename a file, git will think that you deleted it, and created a new file under the new name. To tell git that the file was actually moved or renamed, use the command
