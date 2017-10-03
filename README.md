@@ -326,3 +326,13 @@ git checkout [commit-id]
 git checkout master
 (...back to the latest version...)
 ```
+
+## Other topics
+
+### Moving or renaming files
+
+If you move or rename a file, git will think that you deleted it, and created a new file under the new name. To tell git that the file was actually moved or renamed, use the command
+```
+git mv oldname newname
+```
+Now if you run `git status` you should see that git has recorded the new name of the file. You can now `git commit` your change to remember the new filename.
