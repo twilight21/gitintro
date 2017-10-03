@@ -201,7 +201,7 @@ If your git repository is set up to publish your work to github, it's easy to pu
 
 First, create a new github repository through the github website. Then, github should show you some commands to "push an existing repository from the command line" that look like
 ```
-git remote add origin git@github.com:YourGithubAccountName/RepositoryName.git
+git remote add origin https://github.com/YourGithubAccountName/RepositoryName.git
 git push -u origin master
 ```
 Of course, your account and repository names will be different. If you type these commands, you will be prompted for your github password, and then your changes will be published.
