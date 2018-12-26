@@ -9,7 +9,7 @@
   * [Adding files to the git repository](#adding-files-to-the-git-repository)
   * [Making a commit](#making-a-commit)
   * [Making some changes](#making-some-changes)
-  * [(Optional) Publishing your work](#optional-publishing-your-work)
+  * [Pushing to github](#optional-publishing-your-work)
   * [(Optional) Working on a team](#optional-working-on-a-team)
   * [Workflow summary](#workflow-summary)
 - [Reviewing repository history and recalling old versions of files](#reviewing-repository-history-and-recalling-old-versions-of-files)
